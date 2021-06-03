@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="assests/main.css">
+</head>
+<body>
+    <div class="container">
+        <div><button class="rock">ROCK</button>
+        <button class="paper">PAPER</button>
+        <button class="scissors">SCISSORS</button>
+    </div>
+        <div class="result"></div>
+    </div>
+    
+    <!-- <button id="btn">Alert</button>
+    <div>
+        <button id="1">Click me</button>
+        <button id="2">Click me</button>
+        <button id="3">Click me</button>
+    </div> -->
+    <script>
+        const rock = document.querySelector('.rock');
+
+        const paper = document.querySelector('.paper');
+
+        const scissors = document.querySelector('.scissors');
+
+        const buttons = document.querySelectorAll('button');
+
+        const result = document.querySelector('.result');
+    
+    function computerPlay(){
+        options = ['rock', 'paper', 'scissors']
+        optIndex = Math.floor(Math.random() * options.length);
+        comPick = options[optIndex];
+        comPickI = comPick.toUpperCase();
+        return comPickI
+    }
+     
+    
+//     rock.addEventListener('click', (playerSelection, computerSelection) => {
+//         let playerOption = 'rock'
+//         playerSelection = playerOption.toUpperCase()
+//         computerSelection = computerPlay();
+//         if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS'){
+//         result.textContent = " omputer Wins!"
+//         return 'Computer wins !'
+//     } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'ROCK' && computerSelection == 'PAPER'){
+//         console.log('computer wins');
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     }else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK'){
+//         console.log('computer wins');
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     }else { console.log('it\'s a draw');
+//     result.textContent = " it is a draw!"
+//     }
+// }
+
+//     )
+
+
+//     paper.addEventListener('click', (playerSelection, computerSelection) => {
+//         let playerOption = 'paper'
+//         playerSelection = playerOption.toUpperCase()
+//         computerSelection = computerPlay();
+//         if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS'){
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'ROCK' && computerSelection == 'PAPER'){
+//         console.log('computer wins');
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     }else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK'){
+//         console.log('computer wins');
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     }else { console.log('it\'s a draw');
+//     result.textContent = " it is a draw!"
+//     }
+// }
+
+//     )
+
+
+
+//     scissors.addEventListener('click', (playerSelection, computerSelection) => {
+//         let playerOption = 'scissors'
+//         playerSelection = playerOption.toUpperCase()
+//         computerSelection = computerPlay();
+//         if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS'){
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'ROCK' && computerSelection == 'PAPER'){
+//         console.log('computer wins');
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     }else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER'){
+//         console.log('player wins');
+//         result.textContent = "Player Wins!"
+//         return 'Player wins !'
+//     }else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK'){
+//         console.log('computer wins');
+//         result.textContent = " Computer Wins!"
+//         return 'Computer wins !'
+//     }else { console.log('it\'s a draw');
+//     result.textContent = " it is a draw!"
+//     }
+// }
+
+//     )
+
+
+
+    buttons.forEach((button) => {
+        button.addEventListener('click', (playerSelection, computerSelection) => {
+        let playerOption = button.className;
+        playerSelection = playerOption.toUpperCase()
+        computerSelection = computerPlay();
+        if (playerSelection == 'PAPER' && computerSelection == 'SCISSORS'){
+        result.textContent = " Computer Wins!"
+        return 'Computer wins !'
+    } else if (playerSelection == 'PAPER' && computerSelection == 'ROCK'){
+        console.log('player wins');
+        result.textContent = "Player Wins!"
+        return 'Player wins !'
+    }else if (playerSelection == 'ROCK' && computerSelection == 'SCISSORS'){
+        console.log('player wins');
+        result.textContent = "Player Wins!"
+        return 'Player wins !'
+    }else if (playerSelection == 'ROCK' && computerSelection == 'PAPER'){
+        console.log('computer wins');
+        result.textContent = " Computer Wins!"
+        return 'Computer wins !'
+    }else if (playerSelection == 'SCISSORS' && computerSelection == 'PAPER'){
+        console.log('player wins');
+        result.textContent = "Player Wins!"
+        return 'Player wins !'
+    }else if (playerSelection == 'SCISSORS' && computerSelection == 'ROCK'){
+        console.log('computer wins');
+        result.textContent = " Computer Wins!"
+        return 'Computer wins !'
+    }else { console.log('it\'s a draw');
+    result.textContent = " it is a draw!"
+    }
+})
+    })
+
+    </script>
+</body>
+</html>

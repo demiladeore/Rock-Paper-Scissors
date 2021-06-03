@@ -1,0 +1,15 @@
+body{
+    background:crimson;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    margin: 0 30px;
+}
